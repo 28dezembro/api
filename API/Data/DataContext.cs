@@ -1,13 +1,13 @@
-using ListaTarefas.Models;
+using Tarefas.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Tarefas.Data
 {
-    public class AppDbContext : DbContext
+    public class DataContext : DbContext
     {
-        public DbSet<ListaTarefas> Tarefas { get; set; }
+        public DbSet<ListaTarefas> ListaTarefas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("DataSource=icecream.sqlite;Cache=Shared");
+            => options.UseSqlite("DataSource=tarefas.sqlite;Cache=Shared");
     }
 }

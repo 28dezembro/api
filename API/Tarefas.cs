@@ -65,23 +65,6 @@ class WebAPI
             }
         ).Produces<ListaTarefas>();
 
-        
-         /*
-  app.MapDelete("/api/flavors", (AppDbContext context, Guid id) =>
-        {
-            var flavor = context.Flavors.Find(id);
-
-            if (flavor == null)
-            {
-                return Results.NotFound();
-            }
-
-            context.Flavors.Remove(flavor);
-            context.SaveChanges();
-            return Results.Ok(flavor);
-        }).Produces<Flavor>();
-        */
-
         app.MapDelete("/api/listaTarefas", (DataContext context, Guid Id) =>
             {
                 var tarefa = context.ListaTarefas.Find(Id);
@@ -93,9 +76,6 @@ class WebAPI
                 return Results.Ok(tarefa);
             }
         ).Produces<ListaTarefas>();
-
-
-    
 
         app.Run();
     }
